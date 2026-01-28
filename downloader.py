@@ -1,6 +1,9 @@
 import yt_dlp
 
+import config_manager
 from file_formats import FileFormat
+
+config = config_manager.get_config()
 
 
 def download(
@@ -8,9 +11,8 @@ def download(
         file_format: FileFormat,
         resolution: int | None
 ):
-    filename_template = "%(creator)s - %(title)s.%(ext)s"
     options = {
-        "outtmpl": f"/Users/leo_proger/Downloads/{filename_template}"
+        "outtmpl": f"{config.get("outputFolder")}/{config.get("filenameFormat")}"
     }
 
     if file_format == FileFormat.MP4:
