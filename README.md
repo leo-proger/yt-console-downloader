@@ -6,14 +6,15 @@ So I decided to create a simple console utility.
 
 ## Description
 
-There are 3 options:
+There are 2 options:
 
 1. Download MP4
 2. Download MP3
-3. Settings
+
+Settings are in `yt-config.json` file.
 
 If you need more features, you
-may [DM me](https://github.com/leo-proger/yt-console-downloader?tab=readme-ov-file#contacts)
+may [DM me](https://github.com/leo-proger/yt-console-downloader?tab=readme-ov-file#contacts).
 
 ## Prerequisites
 
