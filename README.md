@@ -19,6 +19,10 @@ may [DM me](https://github.com/leo-proger/yt-console-downloader?tab=readme-ov-fi
 
 - FFmpeg ([installation guide](https://github.com/oop7/ffmpeg-install-guide?tab=readme-ov-file))
 
+## Usage
+
+Download executable file from the latest [Release](https://github.com/leo-proger/yt-console-downloader/releases).
+
 ## Contacts
 
 - [Telegram](https://t.me/leo_proger)
