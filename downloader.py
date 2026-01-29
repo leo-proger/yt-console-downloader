@@ -1,3 +1,4 @@
+import ua_generator
 import yt_dlp
 
 import config_manager
@@ -12,7 +13,11 @@ def download(
         resolution: int | None
 ):
     options = {
-        "outtmpl": f"{config.get("outputFolder")}/{config.get("filenameFormat")}"
+        "outtmpl": f"{config.get("outputFolder")}/{config.get("filenameFormat")}",
+        "nocheckcertificate": True,
+        "http_headers": {
+            "User-Agent": ua_generator.generate()
+        }
     }
 
     if file_format == FileFormat.MP4:
