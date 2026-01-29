@@ -27,23 +27,33 @@ def main():
 
         print("Your video has been started downloading...")
 
-        download(
-            link=link,
-            file_format=FileFormat.MP4,
-            resolution=resolutions[quality - 1]
-        )
+        try:
+            download(
+                link=link,
+                file_format=FileFormat.MP4,
+                resolution=resolutions[quality - 1]
+            )
+            print("Downloaded.")
+        except Exception as e:
+            print(e)
+
 
     elif user_input == 2:
         print("Your video has been started downloading...")
 
-        download(
-            link=link,
-            file_format=FileFormat.MP3,
-            resolution=None
-        )
+        try:
+            download(
+                link=link,
+                file_format=FileFormat.MP3,
+                resolution=None
+            )
+            print("Downloaded.")
+        except Exception as e:
+            print(e)
+
     else:
         print("Incorrect option.\n")
-        main()
+    main()
 
 
 def check_ffmpg() -> bool:
