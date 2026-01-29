@@ -3,21 +3,34 @@ revision = 3
 requires-python = ">=3.13"
 
 [[package]]
+name = "ua-generator"
+version = "2.0.20"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/0c/2a/cdad0384158e6b678bd0853da18bc4886e726f968e04ed513c6f05026811/ua_generator-2.0.20.tar.gz", hash = "sha256:50ae26d03beb2c6c500477d88079768dfdcca1e1bc762838b622b4300fcac68e", size = 28299, upload-time = "2026-01-11T14:35:33.024Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ef/7d/7ddca0438f5f8c71de9a32eb22c0e1e66a40806289eeb908a5d10120e60e/ua_generator-2.0.20-py3-none-any.whl", hash = "sha256:6539dbc439f6616125f8bf840e3246f9202db98541baa56d327feb1d0e63ccb2", size = 32425, upload-time = "2026-01-11T14:35:31.231Z" },
+]
+
+[[package]]
 name = "yt-console-downloader"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "ua-generator" },
     { name = "yt-dlp" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "yt-dlp", specifier = ">=2025.12.8" }]
+requires-dist = [
+    { name = "ua-generator", specifier = "==2.0.20" },
+    { name = "yt-dlp", specifier = "==2026.1.29" },
+]
 
 [[package]]
 name = "yt-dlp"
-version = "2025.12.8"
+version = "2026.1.29"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/14/77/db924ebbd99d0b2b571c184cb08ed232cf4906c6f9b76eed763cd2c84170/yt_dlp-2025.12.8.tar.gz", hash = "sha256:b773c81bb6b71cb2c111cfb859f453c7a71cf2ef44eff234ff155877184c3e4f", size = 3088947, upload-time = "2025-12-08T00:16:01.649Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/42/b6/b401777f2fb16cb35bfc352079b8c5a60fbc8189c655539f51a9847d1e0b/yt_dlp-2026.1.29.tar.gz", hash = "sha256:12b489eb16828cc3fff1723f244992ebae8a5bf1ad75c8e9f01d729ae237ebb9", size = 3098668, upload-time = "2026-01-29T17:18:03.394Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6e/2f/98c3596ad923f8efd32c90dca62e241e8ad9efcebf20831173c357042ba0/yt_dlp-2025.12.8-py3-none-any.whl", hash = "sha256:36e2584342e409cfbfa0b5e61448a1c5189e345cf4564294456ee509e7d3e065", size = 3291464, upload-time = "2025-12-08T00:15:58.556Z" },
+    { url = "https://files.pythonhosted.org/packages/0f/1d/696538eb18a9da3dd4b7772162cb3a6537723a56426a7452b98201c04bfd/yt_dlp-2026.1.29-py3-none-any.whl", hash = "sha256:08d0a25aead160c4787cbd0d2e82a269c75c8dbcfbfa729ce45ad52a8375fa1d", size = 3297510, upload-time = "2026-01-29T17:18:01.369Z" },
 ]
