@@ -4,11 +4,11 @@ requires-python = ">=3.13"
 
 [[package]]
 name = "ua-generator"
-version = "2.0.20"
+version = "2.0.24"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/0c/2a/cdad0384158e6b678bd0853da18bc4886e726f968e04ed513c6f05026811/ua_generator-2.0.20.tar.gz", hash = "sha256:50ae26d03beb2c6c500477d88079768dfdcca1e1bc762838b622b4300fcac68e", size = 28299, upload-time = "2026-01-11T14:35:33.024Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/7b/a5/8f87ad7bbe8431a9b428b28764de1998bb8c46ab388af56675edb60ff49f/ua_generator-2.0.24.tar.gz", hash = "sha256:c21a6e9efd90585cc888629acc7c3a408e54d4e6a2d04988fb966b5a2cf3f793", size = 28398, upload-time = "2026-03-30T21:13:45.752Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ef/7d/7ddca0438f5f8c71de9a32eb22c0e1e66a40806289eeb908a5d10120e60e/ua_generator-2.0.20-py3-none-any.whl", hash = "sha256:6539dbc439f6616125f8bf840e3246f9202db98541baa56d327feb1d0e63ccb2", size = 32425, upload-time = "2026-01-11T14:35:31.231Z" },
+    { url = "https://files.pythonhosted.org/packages/22/69/493868b23302df3dca012f14c79634af1b67a0e4d3a80b4c9c21062c8d15/ua_generator-2.0.24-py3-none-any.whl", hash = "sha256:b4d429d74c710d5caef289afd793584bdab2f409c749877f675fcf5fb674ef8d", size = 32504, upload-time = "2026-03-30T21:13:44.176Z" },
 ]
 
 [[package]]
@@ -22,15 +22,15 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "ua-generator", specifier = "==2.0.20" },
-    { name = "yt-dlp", specifier = "==2026.1.29" },
+    { name = "ua-generator", specifier = ">=2.0.24" },
+    { name = "yt-dlp", specifier = ">=2026.3.17" },
 ]
 
 [[package]]
 name = "yt-dlp"
-version = "2026.1.29"
+version = "2026.3.17"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/42/b6/b401777f2fb16cb35bfc352079b8c5a60fbc8189c655539f51a9847d1e0b/yt_dlp-2026.1.29.tar.gz", hash = "sha256:12b489eb16828cc3fff1723f244992ebae8a5bf1ad75c8e9f01d729ae237ebb9", size = 3098668, upload-time = "2026-01-29T17:18:03.394Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/8b/34/7c6b4e3f89cb6416d2cd7ab6dab141a1df97ab0fb22d15816db2c92148c9/yt_dlp-2026.3.17.tar.gz", hash = "sha256:ba7aa31d533f1ffccfe70e421596d7ca8ff0bf1398dc6bb658b7d9dec057d2c9", size = 3119221, upload-time = "2026-03-17T23:43:00.244Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/0f/1d/696538eb18a9da3dd4b7772162cb3a6537723a56426a7452b98201c04bfd/yt_dlp-2026.1.29-py3-none-any.whl", hash = "sha256:08d0a25aead160c4787cbd0d2e82a269c75c8dbcfbfa729ce45ad52a8375fa1d", size = 3297510, upload-time = "2026-01-29T17:18:01.369Z" },
+    { url = "https://files.pythonhosted.org/packages/cd/13/5093bcb954878e50f7217fd2ab94282b53934022e4e4a03265582da83bf5/yt_dlp-2026.3.17-py3-none-any.whl", hash = "sha256:32992db94303a8a5d211a183f2174834fe7f8c29d83ed2e7a324eae97a8f26d8", size = 3315134, upload-time = "2026-03-17T23:42:57.863Z" },
 ]
