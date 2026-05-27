@@ -4,11 +4,11 @@ requires-python = ">=3.13"
 
 [[package]]
 name = "ua-generator"
-version = "2.0.24"
+version = "2.1.1"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/7b/a5/8f87ad7bbe8431a9b428b28764de1998bb8c46ab388af56675edb60ff49f/ua_generator-2.0.24.tar.gz", hash = "sha256:c21a6e9efd90585cc888629acc7c3a408e54d4e6a2d04988fb966b5a2cf3f793", size = 28398, upload-time = "2026-03-30T21:13:45.752Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/2b/4a/46aa28f8eb83969ef8e1e8ae521147de966916de85ae6729d2d97480be15/ua_generator-2.1.1.tar.gz", hash = "sha256:c01984c1055da4900c8a1f4c419f229fa454caf42d8642267aec1904110d1c8d", size = 29642, upload-time = "2026-05-24T09:48:47.008Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/22/69/493868b23302df3dca012f14c79634af1b67a0e4d3a80b4c9c21062c8d15/ua_generator-2.0.24-py3-none-any.whl", hash = "sha256:b4d429d74c710d5caef289afd793584bdab2f409c749877f675fcf5fb674ef8d", size = 32504, upload-time = "2026-03-30T21:13:44.176Z" },
+    { url = "https://files.pythonhosted.org/packages/60/8c/a9f0161f2a34752987199425fec7f0068b012a02c98551615a9b82cbd70a/ua_generator-2.1.1-py3-none-any.whl", hash = "sha256:d8fd6e39e44dc057dd232d5f808fe0f61dab4a3163903cfe24446777ecdd2ec4", size = 32769, upload-time = "2026-05-24T09:48:45.44Z" },
 ]
 
 [[package]]
@@ -22,7 +22,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "ua-generator", specifier = ">=2.0.24" },
+    { name = "ua-generator", specifier = "==2.1.1" },
     { name = "yt-dlp", specifier = ">=2026.3.17" },
 ]
 
