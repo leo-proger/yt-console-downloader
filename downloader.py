@@ -7,59 +7,53 @@ from file_formats import FileFormat
 config = config_manager.get_config()
 
 
-def download(
-        link: str,
-        file_format: FileFormat,
-        resolution: int | None
-):
-    options = {
-        "outtmpl": f"{config.get("outputFolder")}/{config.get("filenameFormat")}",
+def _base_options() -> dict:
+    return {
         "nocheckcertificate": True,
-        "http_headers": {
-            "User-Agent": ua_generator.generate()
-        }
+        "http_headers": {"User-Agent": ua_generator.generate()},
+        "js_runtimes": {"node": {}},
     }
 
-    if file_format == FileFormat.MP4:
-        options.update({
-            "format": f"bv*[height={resolution}]+ba/b[height={resolution}]",
-            "merge_output_format": "mp4"
-        })
 
-    elif file_format == FileFormat.MP3:
-        options.update({
+def _format_options(file_format: FileFormat, resolution: int | None) -> dict:
+    if file_format == FileFormat.MP4:
+        return {
+            "format": f"bv*[height={resolution}]+ba/b[height={resolution}]",
+            "merge_output_format": "mp4",
+        }
+    if file_format == FileFormat.MP3:
+        return {
             "format": "bestaudio/best",
             "postprocessors": [{
                 "key": "FFmpegExtractAudio",
                 "preferredcodec": "mp3",
                 "preferredquality": "192",
             }],
-        })
-    else:
-        raise Exception("Incorrect output file format.")
+        }
+    raise ValueError(f"Unsupported file format: {file_format}")
 
+
+def download(link: str, file_format: FileFormat, resolution: int | None) -> None:
+    options = {
+        **_base_options(),
+        "outtmpl": f"{config.get('outputFolder')}/{config.get('filenameFormat')}",
+        **_format_options(file_format, resolution),
+    }
     with yt_dlp.YoutubeDL(options) as ydl:
         ydl.download([link])
 
 
 def get_available_video_qualities(link: str) -> list[int]:
-    ydl_opts = {
+    options = {
+        **_base_options(),
         "quiet": True,
         "skip_download": True,
-        "no_warnings": True
+        "no_warnings": True,
     }
+    with yt_dlp.YoutubeDL(options) as ydl:
+        info = ydl.extract_info(link, download=False)
 
-    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        info = ydl.extract_info(link, download=False)  # Fetch metadata only
-
-    formats = info.get("formats", [])
-
-    resolutions = sorted(
-        {
-            h for fmt in formats
-            if (h := fmt.get("height", 0)) and h >= 144
-        },
-        reverse=True
+    return sorted(
+        {h for fmt in info.get("formats", []) if (h := fmt.get("height")) and h >= 144},
+        reverse=True,
     )
-
-    return resolutions

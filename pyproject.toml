@@ -6,4 +6,5 @@ requires-python = ">=3.13"
 dependencies = [
     "ua-generator==2.1.1",
     "yt-dlp>=2026.3.17",
+    "yt-dlp-ejs>=0.8.0",
 ]
