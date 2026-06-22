@@ -24,11 +24,25 @@ def _format_options(file_format: FileFormat, resolution: int | None) -> dict:
     if file_format == FileFormat.MP3:
         return {
             "format": "bestaudio/best",
-            "postprocessors": [{
-                "key": "FFmpegExtractAudio",
-                "preferredcodec": "mp3",
-                "preferredquality": "192",
-            }],
+            # Скачиваем обложку видео, чтобы встроить её в итоговый MP3
+            "writethumbnail": True,
+            "postprocessors": [
+                {
+                    "key": "FFmpegExtractAudio",
+                    "preferredcodec": "mp3",
+                    "preferredquality": "192",
+                },
+                # Приводим обложку к JPG — формат, который корректно встраивается в MP3
+                {
+                    "key": "FFmpegThumbnailsConvertor",
+                    "format": "jpg",
+                },
+                # Встраиваем обложку в аудиофайл
+                {
+                    "key": "EmbedThumbnail",
+                    "already_have_thumbnail": False,
+                },
+            ],
         }
     raise ValueError(f"Unsupported file format: {file_format}")
 
